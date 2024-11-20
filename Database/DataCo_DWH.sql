@@ -99,29 +99,4 @@ CREATE TABLE FactSales (
     CONSTRAINT FK_FactSales_Customer FOREIGN KEY (CustomerKey) REFERENCES DimCustomer(CustomerKey),
     CONSTRAINT FK_FactSales_Department FOREIGN KEY (DepartmentKey) REFERENCES DimDepartment(DepartmentKey)
 );
--------------------------------------------------------------------------------------------------------------------------------
-/*
--- Tạo bảng FactShipping
-CREATE TABLE FactShipping (
-    ShippingKey INT IDENTITY PRIMARY KEY,
-    -- Attributes
-    OrderId INT NOT NULL,
-    OrderDate DATE,
-    ShippingDate DATE,
-    LateDeliveryRisk BIT NOT NULL,
-    DaysForShipmentScheduled INT NOT NULL,
-    DaysForShipmentActual INT NOT NULL,
-    DeliveryStatus VARCHAR(50) NOT NULL,
-    ShippingMode VARCHAR(50) NOT NULL,
-    
-    -- Metadata
-    RowIsCurrent BIT DEFAULT 1 NOT NULL,
-    RowStartDate DATETIME DEFAULT '12/31/1899' NOT NULL,
-    RowEndDate DATETIME DEFAULT '12/31/9999' NOT NULL,
-    RowChangeReason NVARCHAR(200) NULL,
-    
-    -- Constraints
-    CONSTRAINT FK_FactShipping_Order FOREIGN KEY (OrderId) REFERENCES FactSales(OrderId)
-);
-*/
 GO
